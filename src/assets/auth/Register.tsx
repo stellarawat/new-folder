@@ -1,14 +1,16 @@
-import React, { useState } from "react";
-import "./App.tsx";
+import  { FC, FormEvent, useState } from "react";
 import "./style.css";
 import eyeImg from "../img/eye.png";
 import phoneImg from "../img/phone-call.png";
-const Register: React.FC = () => {
+
+const Register: FC = () => {
     const [phoneNumber, setPhoneNumber] = useState<string>("");
     const [password, setPassword] = useState<string>("");
     const [confirmPassword, setConfirmPassword] = useState<string>("");
+    const [agreeToTerms, setAgreeToTerms] = useState<Boolean>(false);
 
-    const handleSubmit = (e: React.FormEvent) => {
+
+    const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
     
         if (password !== confirmPassword) {
@@ -30,6 +32,7 @@ const Register: React.FC = () => {
             placeholder="Phone Number"
             value={phoneNumber}
             onChange={(e) => setPhoneNumber(e.target.value)}
+            maxLength={10}
             required
           />
           <img className="icon-img" src={phoneImg} alt="Phone" />
@@ -42,6 +45,8 @@ const Register: React.FC = () => {
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            minLength={5}
+            maxLength={10}
             required
           />
           <img className="icon-img" src={eyeImg} alt="Eye" />
@@ -54,6 +59,8 @@ const Register: React.FC = () => {
             placeholder="Confirm Password"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
+            minLength={5}
+            maxLength={10}
             required
           />
           <img className="icon-img" src={eyeImg} alt="Eye" />
@@ -65,13 +72,14 @@ const Register: React.FC = () => {
           <input
             type="checkbox"
             id="terms"
-            checked={agreeToTerms}
+            checked ={agreeToTerms}
             onChange={(e) => setAgreeToTerms(e.target.checked)}
             required
           />
           <label htmlFor="terms">
             By checking this message, I hereby confirm that I agree with the 
-            <a href="#">Terms and Conditions</a>, the <a href="#">Privacy Policy</a>, 
+            <a href="#">Terms and Conditions</a>, the{' '}
+            <a href="#">Privacy Policy</a>, 
             that I am 18 years old or over and that all information given is true.
           </label>
         </div>

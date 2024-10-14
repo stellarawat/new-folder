@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import  {FC , FormEvent, useState } from "react";
 import "./style.css";
 import eyeImg from "../img/eye.png";
 import phoneImg from "../img/phone-call.png";
 
-const Login: React.FC = () => {
+const Login: FC = () => {
     const [phoneNumber, setPhoneNumber] = useState<string>("");
     const [password, setPassword] = useState<string>("");
+    const [rememberMe, setRememberMe] = useState<Boolean>(false);
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
     
         console.log("Logging in with", { phoneNumber, password });

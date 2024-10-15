@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './style.css'; 
-import Login from "../src/assets/auth/Login";
-import Register from "../src/assets/auth/Register";
+import Login from "./auth/Login";
+import Register from "./auth/Register";
+import {ForgotPassword} from "./Pages/ForgotPassword";
+
 
 const App: React.FC = () => {
   const [isLogin, setIsLogin] = useState(true);

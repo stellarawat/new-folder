@@ -7,7 +7,7 @@ const Register: FC = () => {
     const [phoneNumber, setPhoneNumber] = useState<string>("");
     const [password, setPassword] = useState<string>("");
     const [confirmPassword, setConfirmPassword] = useState<string>("");
-    const [agreeToTerms, setAgreeToTerms] = useState<Boolean>(false);
+    const [AgreeToTerms, setAgreeToTerms] = useState<boolean>(false);
 
 
     const handleSubmit = (e: FormEvent) => {
@@ -72,7 +72,7 @@ const Register: FC = () => {
           <input
             type="checkbox"
             id="terms"
-            checked ={agreeToTerms}
+            checked={AgreeToTerms}
             onChange={(e) => setAgreeToTerms(e.target.checked)}
             required
           />

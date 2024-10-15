@@ -6,7 +6,7 @@ import phoneImg from "../img/phone-call.png";
 const Login: FC = () => {
     const [phoneNumber, setPhoneNumber] = useState<string>("");
     const [password, setPassword] = useState<string>("");
-    const [rememberMe, setRememberMe] = useState<Boolean>(false);
+    const [rememberMe, setRememberMe] = useState<boolean>(false);
 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
@@ -58,6 +58,7 @@ const Login: FC = () => {
               id="remember"
               checked={rememberMe}
               onChange={() => setRememberMe(!rememberMe)}
+              required
             />
             <label htmlFor="remember">Remember me</label>
           </div>

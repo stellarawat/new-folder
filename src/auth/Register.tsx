@@ -1,7 +1,7 @@
-import  { FC, FormEvent, useState } from "react";
-import "./style.css";
-import eyeImg from "../img/eye.png";
-import phoneImg from "../img/phone-call.png";
+import  {FC, FormEvent, useState } from "react";
+import "../style.css";
+import eyeImg from "../assets/img/eye.png";
+import phoneImg from "../assets/img/phone-call.png";
 
 const Register: FC = () => {
     const [phoneNumber, setPhoneNumber] = useState<string>("");

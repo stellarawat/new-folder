@@ -7,11 +7,17 @@ const Login: FC = () => {
     const [phoneNumber, setPhoneNumber] = useState<string>("");
     const [password, setPassword] = useState<string>("");
     const [rememberMe, setRememberMe] = useState<boolean>(false);
+    const [,setShowForgotPassword] = useState(false);
+
+    const handleForgotPasswordClick = (e: { preventDefault: () => void; }) => {
+      e.preventDefault();
+      setShowForgotPassword(true); // Show the forgot password form
+    };
 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
     
-        console.log("Logging in with", { phoneNumber, password });
+        console.log("Logging in with", { phoneNumber, password, rememberMe });
     };
 
     return (
@@ -20,6 +26,7 @@ const Login: FC = () => {
   
         <form className="user-inputs" onSubmit={handleSubmit}>
           <div className="inputs-div">
+
             <input
               className="inputs"
               type="text"
@@ -47,9 +54,9 @@ const Login: FC = () => {
           </div>
   
           <div className="forget">
-            <a href="#">Forgot Password</a>
+            <a href="#" onClick={handleForgotPasswordClick}>Forgot Password</a>
           </div>
-  
+
           <button type="submit">Login</button>
   
           <div className="remember-me">

@@ -1,3 +1,4 @@
+/* login */
 .login-container {
   display: flex;
   flex-direction: column;
@@ -92,6 +93,8 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+/* register */
 
 .register {
   display: flex;

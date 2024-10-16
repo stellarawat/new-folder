@@ -78,8 +78,11 @@ const Register: FC = () => {
           />
           <label htmlFor="terms">
             By checking this message, I hereby confirm that I agree with the 
-            <a href="#">Terms and Conditions</a>, the{' '}
-            <a href="#">Privacy Policy</a>, 
+            {''}
+            <a href="#">Terms and Conditions</a>, the
+            {''}
+            <a href="#">Privacy Policy</a>
+            {''} 
             that I am 18 years old or over and that all information given is true.
           </label>
         </div>

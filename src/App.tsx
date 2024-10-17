@@ -1,16 +1,22 @@
-import { FC } from 'react';
-import "./style.css"; 
-import Login from "../src/auth/Login";
-import Register from "../src/auth/Register";
-import {ForgotPassword} from "./Pages/ForgotPassword";
+import { FC, useState } from 'react';
+import "./style.css";
+import Login from "./auth/Login";
+import Register from "./auth/Register";
 
-const App : FC = () =>{
+const App: FC = () => {
+  const [isLoginPage, setIsLoginPage] = useState(true); // To control the initial render
 
-  return(
-    <>
-      < Login/>
-      <Register/>
-    </>
+  return (
+    <div className="auth-container">
+
+      {isLoginPage ? (
+      <Login goToRegister ={()=> setIsLoginPage(false)} />
+      ) : (
+      <Register goToLogin = {() => setIsLoginPage(true)} />
+
+      )}
+
+    </div>
   );
 };
 

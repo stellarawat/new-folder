@@ -1,27 +1,30 @@
-import  {FC, FormEvent, useState } from "react";
+import { FC, FormEvent, useState } from "react";
 import "../style.css";
 import eyeImg from "../assets/img/eye.png";
 import phoneImg from "../assets/img/phone-call.png";
 
-const Register: FC = () => {
-    const [phoneNumber, setPhoneNumber] = useState<string>("");
-    const [password, setPassword] = useState<string>("");
-    const [confirmPassword, setConfirmPassword] = useState<string>("");
-    const [AgreeToTerms, setAgreeToTerms] = useState<boolean>(false);
+interface RegisterProps {
+  goToLogin: () => void;  
+}
 
+const Register: FC<RegisterProps> = ({ goToLogin }) => {
+  const [phoneNumber, setPhoneNumber] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [confirmPassword, setConfirmPassword] = useState<string>("");
+  const [AgreeToTerms, setAgreeToTerms] = useState<boolean>(false);
 
-    const handleSubmit = (e: FormEvent) => {
-        e.preventDefault();
-    
-        if (password !== confirmPassword) {
-            console.error("Passwords do not match");
-            return;
-        }
-        console.log("Registering", { phoneNumber, password });
-    };
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
 
-    return (
-        <div className="login-container">
+    if (password !== confirmPassword) {
+      console.error("Passwords do not match");
+      return;
+    }
+    console.log("Registering", { phoneNumber, password });
+  };
+
+  return (
+    <div className="login-container">
       <h2 className="header">REGISTER</h2>
 
       <form className="user-inputs" onSubmit={handleSubmit}>
@@ -66,8 +69,6 @@ const Register: FC = () => {
           <img className="icon-img" src={eyeImg} alt="Eye" />
         </div>
 
-        {/* {errorMessage && <p className="error-message">{errorMessage}</p>} */}
-
         <div className="policy-section">
           <input
             type="checkbox"
@@ -77,13 +78,10 @@ const Register: FC = () => {
             required
           />
           <label htmlFor="terms">
-            By checking this message, I hereby confirm that I agree with the 
-            {''}
-            <a href="#">Terms and Conditions</a>, the
-            {''}
-            <a href="#">Privacy Policy</a>
-            {''} 
-            that I am 18 years old or over and that all information given is true.
+            By checking this box, I hereby confirm that I agree with the{" "}
+            <a href="#">Terms and Conditions</a>, the{" "}
+            <a href="#">Privacy Policy</a>, that I am 18 years old or over, and
+            that all information given is true.
           </label>
         </div>
 
@@ -91,11 +89,15 @@ const Register: FC = () => {
       </form>
 
       <div className="register">
-        <p>Already have an account? <a href="login.html">Login</a></p>
+        <p>
+          Already have an account?{" "}
+          <a href="#" onClick={goToLogin}>
+            Login here
+          </a>
+        </p>
       </div>
     </div>
   );
 };
-       
 
 export default Register;

@@ -1,6 +1,24 @@
-.auth-container {
-  border: 1px solid blue;
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+.auth-container {
+  width: 400px; 
+  height: 500px;
+  padding: 20px;
+  border: 1px solid blue;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+
 
 .login-container {
   display: flex;
@@ -97,15 +115,7 @@ a {
 a:hover {
   text-decoration: underline;
 }
-
-
-.register {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-
+/* policy */
 
 .policy-section {
   align-items: center;

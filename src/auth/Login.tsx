@@ -4,7 +4,7 @@ import eyeImg from "../assets/img/eye.png";
 import phoneImg from "../assets/img/phone-call.png";
 
 interface LoginProps {
-  goToRegister: () => void; // Function to switch to the Register page
+  goToRegister: () => void; 
 }
 
 const Login: FC<LoginProps> = ({ goToRegister }) => {
@@ -19,9 +19,9 @@ const Login: FC<LoginProps> = ({ goToRegister }) => {
 
   return (
     <div className="login-container">
-      <h2 className="header">LOGIN</h2>
+      <span className="header">LOGIN</span>
 
-      <form className="user-inputs" onSubmit={handleSubmit}>
+      <div className="user-inputs" onSubmit={handleSubmit}>
         <div className="inputs-div">
           <input
             className="inputs"
@@ -63,10 +63,11 @@ const Login: FC<LoginProps> = ({ goToRegister }) => {
             id="remember"
             checked={rememberMe}
             onChange={() => setRememberMe(!rememberMe)}
+            required
           />
           <label htmlFor="remember">Remember me</label>
         </div>
-      </form>
+      </div>
 
       <div className="register">
         <p>

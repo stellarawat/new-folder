@@ -25,9 +25,9 @@ const Register: FC<RegisterProps> = ({ goToLogin }) => {
 
   return (
     <div className="login-container">
-      <h2 className="header">REGISTER</h2>
+      <span className="header">REGISTER</span>
 
-      <form className="user-inputs" onSubmit={handleSubmit}>
+      <div className="user-inputs" onSubmit={handleSubmit}>
         <div className="inputs-div">
           <input
             className="inputs"
@@ -86,13 +86,13 @@ const Register: FC<RegisterProps> = ({ goToLogin }) => {
         </div>
 
         <button type="submit">Register</button>
-      </form>
+      </div>
 
       <div className="register">
         <p>
           Already have an account?{" "}
           <a href="#" onClick={goToLogin}>
-            Login here
+            Login 
           </a>
         </p>
       </div>

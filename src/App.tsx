@@ -1,11 +1,11 @@
-import { FC, useState } from 'react';
+import { useState } from 'react';
 import "./style.css";
 import Login from "./auth/Login";
 import Register from "./auth/Register";
 
-const App: FC = () => {
-  const [isLoginPage, setIsLoginPage] = useState(true); // To control the initial render
-
+const App = () => {
+  const [isLoginPage, setIsLoginPage] = useState(true); 
+  
   return (
     <div className="auth-container">
 
